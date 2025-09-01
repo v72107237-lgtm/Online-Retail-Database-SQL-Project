@@ -1,8 +1,5 @@
 # Online-Retail-Database-SQL-Project
-This SQL Server project implements a database for a fictional online retail company, showcasing essential SQL skills for entry-level SQL Developer or DBA roles. It includes database creation, schema design, data insertion, advanced queries, triggers, indexes, views, and role-based access control (RBAC) for security.
-
-
-# Online Retail Database SQL Project
+This SQL Server project implements a database for a fictional online retail company, showcasing essential SQL skills for entry-level SQL Developer or DBA roles. It includes database creation, schema design, data insertion, advanced queries, triggers, indexes, views, and role-based access control (RBAC) for securit
 
 ## Overview
 This project implements a database for a fictional online retail company using SQL Server. It demonstrates key SQL skills for an entry-level SQL Developer or SQL DBA role, including:
@@ -38,71 +35,6 @@ If running in an existing database, remove the CREATE DATABASE statement. For se
 
 ## Database Schema
 The database includes 6 main tables plus a logging table. Relationships are enforced with foreign keys.
-
-### ER Diagram
-Below is an Entity-Relationship (ER) diagram in Mermaid syntax (renderable on GitHub or tools like mermaid.live). It shows entities and relationships.
-
-mermaid
-erDiagram
-    CUSTOMERS ||--o{ ORDERS : "places"
-    ORDERS ||--o{ ORDER_ITEMS : "contains"
-    PRODUCTS ||--o{ ORDER_ITEMS : "includes"
-    CATEGORIES ||--o{ PRODUCTS : "categorizes"
-    CHANGE_LOG }|..|{ PRODUCTS : "logs changes for"
-    CHANGE_LOG }|..|{ CUSTOMERS : "logs changes for"
-
-    CUSTOMERS {
-        int CustomerID PK
-        string FirstName
-        string LastName
-        string Email
-        string Phone
-        string Address
-        string City
-        string State
-        string ZipCode
-        string Country
-        datetime CreatedAt
-    }
-
-    PRODUCTS {
-        int ProductID PK
-        string ProductName
-        int CategoryID FK
-        decimal Price
-        int Stock
-        datetime CreatedAt
-    }
-
-    CATEGORIES {
-        int CategoryID PK
-        string CategoryName
-        string Description
-    }
-
-    ORDERS {
-        int OrderID PK
-        int CustomerID FK
-        datetime OrderDate
-        decimal TotalAmount
-    }
-
-    ORDER_ITEMS {
-        int OrderItemID PK
-        int OrderID FK
-        int ProductID FK
-        int Quantity
-        decimal Price
-    }
-
-    CHANGE_LOG {
-        int LogID PK
-        string TableName
-        string Operation
-        int RecordID
-        datetime ChangeDate
-        string ChangedBy
-    }
 
 
 ### Table Descriptions
