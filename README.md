@@ -89,5 +89,4 @@ This shows understanding of security best practices.
 
 Run SELECT * FROM ChangeLog; after modifications to see audit trails.
 
-d
-For questions or feedback, reach out via [your email or LinkedIn]. This project is open-source; fork and modify for learning!
+This project is open-source; fork and modify for learning!
